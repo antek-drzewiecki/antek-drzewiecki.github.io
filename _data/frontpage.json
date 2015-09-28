@@ -1,0 +1,107 @@
+{
+  "images": [
+    {
+      "id": "selfie",
+      "url": "/images/cat.png",
+      "height": 480,
+      "width": 640
+
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Antek Drzewiecki",
+      "image": "selfie",
+      "url": "",
+      "size": 80,
+      "group": 1
+    },
+    {
+      "id": 1,
+      "name": "About Me",
+      "image": "",
+      "url": "",
+      "size": 30,
+      "group": 2
+    },
+    {
+      "id": 2,
+      "name": "Articles",
+      "image": "",
+      "url": "",
+      "size": 30,
+      "group": 2
+    },
+    {
+      "id": 3,
+      "name": "Contact",
+      "image": "antek",
+      "url": "",
+      "size": 30,
+      "group": 5
+    },
+    {
+      "id": 4,
+      "name": "Twitter",
+      "image": "",
+      "url": "",
+      "size": 15,
+      "group": 3
+    },
+    {
+      "id": 5,
+      "name": "LinkedIn",
+      "image": "",
+      "url": "",
+      "size": 15,
+      "group": 3
+    },
+    {
+      "id": 6,
+      "name": "Facebook",
+      "image": "",
+      "url": "",
+      "size": 15,
+      "group": 3
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 1,
+      "value": 1,
+      "distance": 14
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "value": 1,
+      "distance": 14
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "value": 1,
+      "distance": 14
+    },
+    {
+      "source": 4,
+      "target": 3,
+      "value": 1,
+      "distance": 6
+    },
+    {
+      "source": 5,
+      "target": 3,
+      "value": 1,
+      "distance": 6
+    },{
+      "source": 6,
+      "target": 3,
+      "value": 1,
+      "distance": 6
+    }
+
+  ]
+}
