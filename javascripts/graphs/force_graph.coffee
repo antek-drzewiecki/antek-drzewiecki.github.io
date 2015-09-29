@@ -4,7 +4,7 @@
 class @ForceGraph
   width = 900
   height = 800
-  nodeScale = 1.10
+  nodeScale = 1.08
 
   constructor: () ->
     @color = d3.scale.category20();
@@ -13,6 +13,11 @@ class @ForceGraph
       .charge(-400)
       .linkDistance((d) -> d.distance * 10)
       .size([width, height])
+
+    @breath = (element, node) ->
+      console.log(element)
+      console.log(node)
+
 
   prepare: () ->
     @svg = d3.select('#force_graph').append('svg')
@@ -26,19 +31,24 @@ class @ForceGraph
     d3.json '/data.json', (error, data) =>
       throw error if error
 
-      @images = for im in data.images
-        @imageDefintions.append("pattern")
-        .attr("id", im.id)
+
+      images = @svg.selectAll(".patterns")
+        .data(data.images)
+        .enter()
+        .append("pattern")
+        .attr("class", '.pattern')
+        .attr("id", (d) -> d.id)
         .attr("height", 1)
         .attr("width", 1)
-        .attr('viewBox', "0 0 #{im.width} #{im.height}")
+        .attr('viewBox', (d) -> "0 0 #{d.width} #{d.height}")
         .attr("x", 0)
         .attr("y", 0)
         .attr('preserveAspectRatio','none')
         .append("image")
-        .attr("height", im.height)
-        .attr("width", im.width)
-        .attr("xlink:href", im.url)
+        .attr("height", (d) -> d.height)
+        .attr("width", (d) -> d.width)
+        .attr("xlink:href", (d) -> d.url)
+
 
       @force.nodes(data.nodes)
         .links(data.links)
@@ -50,26 +60,51 @@ class @ForceGraph
         .attr("class", "link")
         .style("stroke-width", (d) -> Math.sqrt(d.value) )
 
-      node = @svg.selectAll(".node")
+      nodes = @svg.selectAll("g.node")
         .data(data.nodes)
-        .enter().append("circle")
+
+      nodes.exit().remove()
+
+      nodeGroup =  nodes.enter().append("svg:g").call(@force.drag)
+
+      # The normal nodes - image nodes.
+      nodeGroup.filter (d) -> d.type == "image"
+        .append("circle")
         .attr("class", "node")
         .attr("r", (d) -> d.size)
-        .style("fill", (d) => if d.image?.length then "url(##{d.image})" else  @color(d.group))
-        .call(@force.drag)
+        .style("fill", (d) => if d.type_id?.length then "url(##{d.type_id})" else  @color(d.group))
 
+      # The textnodes
+      textNodes = nodeGroup.filter (d) -> d.type == "text"
+      textNodes.append("circle")
+      .attr("class", "node")
+      .attr("r", (d) -> d.size)
+      .style("fill", (d) => if d.type_id?.length then "url(##{d.type_id})" else  @color(d.group))
 
-      node.on 'mouseover', (node) ->
+      textNodes.append("text")
+      .attr("dx", 0)
+      .attr("dy", ".35em")
+      .style("font-size","10px")
+      .attr("text-anchor", "middle")
+      .style("fill", "white")
+      .text((d) -> d.name)
+
+      # append node title.
+      nodes.append("title").text( (d) -> d.name )
+
+      nodes.on 'mouseover', (node) ->
         d3.select(this).transition()
-        .duration(300)
+        .duration 300
         .attr('r', node.size * nodeScale)
+        d3.select(this).select('text').transition()
+        .duration 300
+        .text (d) -> d.altname
         link.style 'stroke-width', (link) ->
           if (node == link.source || node == link.target) then 3 else 1
 
-      node.on 'mouseout', (node) ->
+      nodes.on 'mouseout', (node) ->
         d3.select(this).attr('r', node.size)
-
-      node.append("title").text( (d) -> d.name )
+        d3.select(this).select('text').text((d) -> d.name)
 
       @force.on "tick", () ->
         link.attr("x1", (d) -> d.source.x)
@@ -77,8 +112,14 @@ class @ForceGraph
           .attr("x2", (d) -> d.target.x)
           .attr("y2", (d) -> d.target.y)
 
-        node.attr("cx", (d) -> d.x)
-          .attr("cy", (d) -> d.y)
+        nodes.attr "transform", (d) ->
+          "translate(#{d.x}, #{d.y})"
+
+        # node.attr("x", (d) -> d.x)
+        #//  .attr("y", (d) -> d.y)
+
+        #texts.attr "transform", (d) ->
+        #  "translate(#{d.x}, #{d.y})"
 
   draw: () =>
     @prepare()
