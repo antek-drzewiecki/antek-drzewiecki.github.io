@@ -2,12 +2,44 @@
 layout: front
 ---
 
-<div class="home">
 
-  <div id="force_graph" class="force_graph">
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div id="force_graph" class="force_graph col-md-10 col-md-offset-1"></div>
+            </div>
+        </div>
+    </div>
+</header>
 
-  </div>
+<section id="about_me" class="container content-section text-center ">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>About me</h2>
+            bla bla
+        </div>
+    </div>
+</section>
+<section class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Articles</h2>
+            bla bla
+        </div>
+    </div>
+</section>
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Contact</h2>
+            bla bla
+        </div>
+    </div>
+</section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+<footer>
+    <div class="container text-center">
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    </div>
+</footer>

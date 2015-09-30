@@ -31,7 +31,6 @@ class @ForceGraph
     d3.json '/data.json', (error, data) =>
       throw error if error
 
-
       images = @svg.selectAll(".patterns")
         .data(data.images)
         .enter()
@@ -49,7 +48,6 @@ class @ForceGraph
         .attr("width", (d) -> d.width)
         .attr("xlink:href", (d) -> d.url)
 
-
       @force.nodes(data.nodes)
         .links(data.links)
         .start()
@@ -65,7 +63,10 @@ class @ForceGraph
 
       nodes.exit().remove()
 
-      nodeGroup =  nodes.enter().append("svg:g").call(@force.drag)
+      nodeGroup = nodes.enter()
+        .append("svg:g")
+        .attr('class', 'nodegroup')
+        .call(@force.drag)
 
       # The normal nodes - image nodes.
       nodeGroup.filter (d) -> d.type == "image"
@@ -92,18 +93,22 @@ class @ForceGraph
       # append node title.
       nodes.append("title").text( (d) -> d.name )
 
+      nodes.on 'click', (node) ->
+        return if (d3.event.defaultPrevented)
+        window.location = node.url if node.url?.length
+
       nodes.on 'mouseover', (node) ->
-        d3.select(this).transition()
-        .duration 300
+        d3.select(this).select('circle').transition()
+        .duration(300)
         .attr('r', node.size * nodeScale)
         d3.select(this).select('text').transition()
-        .duration 300
+        .duration(300)
         .text (d) -> d.altname
         link.style 'stroke-width', (link) ->
           if (node == link.source || node == link.target) then 3 else 1
 
       nodes.on 'mouseout', (node) ->
-        d3.select(this).attr('r', node.size)
+        d3.select(this).select('circle').attr('r', node.size)
         d3.select(this).select('text').text((d) -> d.name)
 
       @force.on "tick", () ->
@@ -114,12 +119,6 @@ class @ForceGraph
 
         nodes.attr "transform", (d) ->
           "translate(#{d.x}, #{d.y})"
-
-        # node.attr("x", (d) -> d.x)
-        #//  .attr("y", (d) -> d.y)
-
-        #texts.attr "transform", (d) ->
-        #  "translate(#{d.x}, #{d.y})"
 
   draw: () =>
     @prepare()

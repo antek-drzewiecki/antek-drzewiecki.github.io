@@ -47,7 +47,7 @@
       "altname": "About Me",
       "type": "text",
       "type_id": "",
-      "url": "",
+      "url": "/about_me",
       "size": 35,
       "group": 4
     },
@@ -57,17 +57,17 @@
       "altname": "Read articles",
       "type": "text",
       "type_id": "",
-      "url": "",
+      "url": "/articles",
       "size": 35,
       "group": 2
     },
     {
       "id": 3,
-      "name": "Contact",
+      "name": "Social",
       "altname": "Contact Me",
       "type": "text",
       "type_id": "",
-      "url": "",
+      "url": "/contact",
       "size": 35,
       "group": 2
     },
@@ -76,7 +76,7 @@
       "name": "Twitter",
       "type": "image",
       "type_id": "twitter-logo",
-      "url": "",
+      "url": "https://twitter.com/tekje",
       "size": 25,
       "group": 3
     },
@@ -85,7 +85,7 @@
       "name": "LinkedIn",
       "type": "image",
       "type_id": "linkedin-logo",
-      "url": "",
+      "url": "https://nl.linkedin.com/in/antekdrzewiecki",
       "size": 25,
       "group": 3
     },
@@ -94,7 +94,7 @@
       "name": "Facebook",
       "type": "image",
       "type_id": "facebook-logo",
-      "url": "",
+      "url": "https://www.facebook.com/antekdrz",
       "size": 25,
       "group": 3
     },
@@ -103,9 +103,19 @@
       "name": "Github",
       "type": "image",
       "type_id": "octocat",
-      "url": "",
+      "url": "https://github.com/antek-drzewiecki/",
       "size": 25,
       "group": 3
+    },
+    {
+      "id": 8,
+      "name": "Projects",
+      "altname": "My Projects",
+      "type": "text",
+      "type_id": "",
+      "url": "/projects",
+      "size": 35,
+      "group": 2
     }
   ],
   "links": [
@@ -125,7 +135,7 @@
       "source": 0,
       "target": 3,
       "value": 1,
-      "distance": 14
+      "distance": 18
     },
     {
       "source": 4,
@@ -148,7 +158,12 @@
       "target": 3,
       "value": 1,
       "distance": 6
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "value": 1,
+      "distance": 14
     }
-
   ]
 }
