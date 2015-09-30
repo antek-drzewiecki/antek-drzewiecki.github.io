@@ -1,0 +1,169 @@
+{
+  "images": [
+    {
+      "id": "selfie",
+      "url": "/images/cat.png",
+      "height": 480,
+      "width": 640
+    },
+    {
+      "id": "octocat",
+      "url": "/images/octocat-large.png",
+      "height": 28,
+      "width": 23
+    },
+    {
+      "id": "twitter-logo",
+      "url": "/images/twitter_logo_med.png",
+      "height": 480,
+      "width": 480
+    },
+    {
+      "id": "facebook-logo",
+      "url": "/images/facebook.png",
+      "height": 512,
+      "width": 512
+    },
+    {
+      "id": "linkedin-logo",
+      "url": "/images/linkedin-tm.png",
+      "height": 140,
+      "width": 140
+    }
+  ],
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Antek Drzewiecki",
+      "type": "image",
+      "type_id": "selfie",
+      "url": "",
+      "size": 80,
+      "group": 1
+    },
+    {
+      "id": 1,
+      "name": "About",
+      "altname": "About Me",
+      "type": "text",
+      "type_id": "",
+      "url": "/about_me",
+      "size": 35,
+      "group": 4
+    },
+    {
+      "id": 2,
+      "name": "Articles",
+      "altname": "Read articles",
+      "type": "text",
+      "type_id": "",
+      "url": "/articles",
+      "size": 35,
+      "group": 2
+    },
+    {
+      "id": 3,
+      "name": "Social",
+      "altname": "Contact Me",
+      "type": "text",
+      "type_id": "",
+      "url": "/contact",
+      "size": 35,
+      "group": 2
+    },
+    {
+      "id": 4,
+      "name": "Twitter",
+      "type": "image",
+      "type_id": "twitter-logo",
+      "url": "https://twitter.com/tekje",
+      "size": 25,
+      "group": 3
+    },
+    {
+      "id": 5,
+      "name": "LinkedIn",
+      "type": "image",
+      "type_id": "linkedin-logo",
+      "url": "https://nl.linkedin.com/in/antekdrzewiecki",
+      "size": 25,
+      "group": 3
+    },
+    {
+      "id": 6,
+      "name": "Facebook",
+      "type": "image",
+      "type_id": "facebook-logo",
+      "url": "https://www.facebook.com/antekdrz",
+      "size": 25,
+      "group": 3
+    },
+    {
+      "id": 7,
+      "name": "Github",
+      "type": "image",
+      "type_id": "octocat",
+      "url": "https://github.com/antek-drzewiecki/",
+      "size": 25,
+      "group": 3
+    },
+    {
+      "id": 8,
+      "name": "Projects",
+      "altname": "My Projects",
+      "type": "text",
+      "type_id": "",
+      "url": "/projects",
+      "size": 35,
+      "group": 2
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 1,
+      "value": 1,
+      "distance": 14
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "value": 1,
+      "distance": 14
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "value": 1,
+      "distance": 18
+    },
+    {
+      "source": 4,
+      "target": 3,
+      "value": 1,
+      "distance": 6
+    },
+    {
+      "source": 5,
+      "target": 3,
+      "value": 1,
+      "distance": 6
+    },{
+      "source": 6,
+      "target": 3,
+      "value": 1,
+      "distance": 6
+    },{
+      "source": 7,
+      "target": 3,
+      "value": 1,
+      "distance": 6
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "value": 1,
+      "distance": 14
+    }
+  ]
+}

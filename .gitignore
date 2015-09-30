@@ -7,3 +7,5 @@ i# Ignore hidden files and directories
 .sass-cache/
 /_site
 Gemfile.lock
+
+.idea/

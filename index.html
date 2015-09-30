@@ -1,23 +1,45 @@
 ---
-layout: default
+layout: front
 ---
 
-<div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div id="force_graph" class="force_graph col-md-10 col-md-offset-1"></div>
+            </div>
+        </div>
+    </div>
+</header>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<section id="about_me" class="container content-section text-center ">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>About me</h2>
+            bla bla
+        </div>
+    </div>
+</section>
+<section class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Articles</h2>
+            bla bla
+        </div>
+    </div>
+</section>
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Contact</h2>
+            bla bla
+        </div>
+    </div>
+</section>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+<footer>
+    <div class="container text-center">
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    </div>
+</footer>
