@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /**
  * Links
- */
+
 a {
   color: $brand-color;
   text-decoration: none;
@@ -88,7 +88,7 @@ a {
     text-decoration: underline;
   }
 }
-
+*/
 /**
  * Blockquotes
  */
@@ -203,6 +203,7 @@ body, html {
 
 #about_me {
   background-color: #1f77b4;
+  color: $background-color;
 }
 
 #contact {
