@@ -85,7 +85,6 @@ class @ForceGraph
       textNodes.append("text")
       .attr("dx", 0)
       .attr("dy", ".35em")
-      .style("font-size","10px")
       .attr("text-anchor", "middle")
       .style("fill", "white")
       .text((d) -> d.name)
@@ -100,16 +99,16 @@ class @ForceGraph
       nodes.on 'mouseover', (node) ->
         d3.select(this).select('circle').transition()
         .duration(300)
-        .attr('r', node.size * nodeScale)
+        .attr 'r', node.size * nodeScale
         d3.select(this).select('text').transition()
-        .duration(300)
+        .duration(400)
         .text (d) -> d.altname
         link.style 'stroke-width', (link) ->
           if (node == link.source || node == link.target) then 3 else 1
 
       nodes.on 'mouseout', (node) ->
-        d3.select(this).select('circle').attr('r', node.size)
         d3.select(this).select('text').text((d) -> d.name)
+        d3.select(this).select('circle').attr('r', node.size)
 
       @force.on "tick", () ->
         link.attr("x1", (d) -> d.source.x)

@@ -38,7 +38,7 @@
       "type": "image",
       "type_id": "selfie",
       "url": "",
-      "size": 80,
+      "size": 88,
       "group": 1
     },
     {
@@ -48,7 +48,7 @@
       "type": "text",
       "type_id": "",
       "url": "/about_me",
-      "size": 35,
+      "size": 39,
       "group": 4
     },
     {
@@ -58,7 +58,7 @@
       "type": "text",
       "type_id": "",
       "url": "/articles",
-      "size": 35,
+      "size": 39,
       "group": 2
     },
     {
@@ -68,7 +68,7 @@
       "type": "text",
       "type_id": "",
       "url": "/contact",
-      "size": 35,
+      "size": 39,
       "group": 2
     },
     {
@@ -77,7 +77,7 @@
       "type": "image",
       "type_id": "twitter-logo",
       "url": "https://twitter.com/tekje",
-      "size": 25,
+      "size": 28,
       "group": 3
     },
     {
@@ -86,7 +86,7 @@
       "type": "image",
       "type_id": "linkedin-logo",
       "url": "https://nl.linkedin.com/in/antekdrzewiecki",
-      "size": 25,
+      "size": 28,
       "group": 3
     },
     {
@@ -95,7 +95,7 @@
       "type": "image",
       "type_id": "facebook-logo",
       "url": "https://www.facebook.com/antekdrz",
-      "size": 25,
+      "size": 28,
       "group": 3
     },
     {
@@ -104,7 +104,7 @@
       "type": "image",
       "type_id": "octocat",
       "url": "https://github.com/antek-drzewiecki/",
-      "size": 25,
+      "size": 28,
       "group": 3
     },
     {
@@ -114,7 +114,7 @@
       "type": "text",
       "type_id": "",
       "url": "/projects",
-      "size": 35,
+      "size": 39,
       "group": 2
     }
   ],
@@ -123,47 +123,47 @@
       "source": 0,
       "target": 1,
       "value": 1,
-      "distance": 14
+      "distance": 18
     },
     {
       "source": 0,
       "target": 2,
       "value": 1,
-      "distance": 14
+      "distance": 18
     },
     {
       "source": 0,
       "target": 3,
       "value": 1,
-      "distance": 18
+      "distance": 24
     },
     {
       "source": 4,
       "target": 3,
       "value": 1,
-      "distance": 6
+      "distance": 10
     },
     {
       "source": 5,
       "target": 3,
       "value": 1,
-      "distance": 6
+      "distance": 10
     },{
       "source": 6,
       "target": 3,
       "value": 1,
-      "distance": 6
+      "distance": 10
     },{
       "source": 7,
       "target": 3,
       "value": 1,
-      "distance": 6
+      "distance": 10
     },
     {
       "source": 0,
       "target": 8,
       "value": 1,
-      "distance": 14
+      "distance": 18
     }
   ]
 }
