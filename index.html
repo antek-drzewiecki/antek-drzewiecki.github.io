@@ -32,10 +32,19 @@ layout: front
 
 </section>
 <section class="container content-section-fluid content-section text-center">
+    <h2>Articles</h2>
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <h2>Articles</h2>
-            bla bla
+            {% if site.posts.size > 0 %}
+                {% for post in site.posts %}
+                    <div>
+                        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div> There are currently no articles to be displayed</div>
+            {% endif %}
         </div>
     </div>
 </section>
