@@ -13,3 +13,5 @@ linkedin_username: antekdrzewiecki
 
 # Build settings
 markdown: kramdown
+gems:
+ - jekyll-coffeescript

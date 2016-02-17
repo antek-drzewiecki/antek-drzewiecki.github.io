@@ -212,6 +212,7 @@ body, html {
 }
 
 #force_graph {
+  z-index: 5;
   font-size: 14px;
 
   g text {
@@ -228,5 +229,30 @@ body, html {
     stroke: #999;
     stroke-opacity: .6;
   }
+}
+
+
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  border: 2px solid $text-color;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: -15px;
+  display: block;
+  padding: 7px;
+  text-align: center;
+  z-index: 10;
+}
+
+@media (min-width:768px) {
+    .v-center {
+        display:table;
+        height:90%;
+        width:100%;
+        vertical-align:middle;
+    }
 }
 
