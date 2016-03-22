@@ -11,7 +11,31 @@ twitter_username: tekje
 github_username: antek-drzewiecki
 linkedin_username: antekdrzewiecki
 
+permalink: /blog/:categories/:year/:month/:day/:title/
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:categories/:year/:month/:day/:title/
+
+
+defaults:
+  -
+    scope:
+      path: "projects"
+      type: "projects" # previously `page` in Jekyll 2.2.
+    values:
+      layout: "post" # overrides previous default layout
+      author: "Antek Drzewiecki"
+
+
+
+# pagination
+paginate: 5
+paginate_path: "/blog/page:num"
+
 # Build settings
 markdown: kramdown
 gems:
  - jekyll-coffeescript
+ - jekyll-paginate
