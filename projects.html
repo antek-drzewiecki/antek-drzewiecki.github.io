@@ -2,17 +2,18 @@
 layout: page
 title: "Projects"
 permalink: /projects/
-description: "What I am working on."
-header-img: "images/about-bg.jpg"
+description: "This is what interests me."
+header-img: "images/projects-bg.jpg"
 menu: 3
 ---
 
-<p>These are the projects I am currently working on.</p>
-
+<p>These are the projects I am currently working on. I will be linking blog related articles to my projects, so you will get a nice overview of related posts!</p
+<hr>
 {% for project in site.projects %}
 <div class="post-preview">
     <a href="{{ project.url | prepend: site.baseurl }}">
-        <h2 class="post-title">            {{ project.title }}
+        <h2 class="post-title">
+        {{ project.title }}
         </h2>
         {% if project.subtitle %}
         <h3 class="post-subtitle">
@@ -20,7 +21,6 @@ menu: 3
         </h3>
         {% endif %}
     </a>
-    <p class="post-meta">Posted by {% if project.author %}{{ project.author }}{% else %}{{ site.title }}{% endif %} on {{ project.date | date: "%B %-d, %Y" }}</p>
 </div>
 <hr>
 {% endfor %}
