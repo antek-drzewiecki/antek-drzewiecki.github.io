@@ -35,7 +35,19 @@ paginate: 5
 paginate_path: "/blog/page:num"
 
 # Build settings
-markdown: kramdown
+#markdown: kramdown
+#markdown: redcarpet
+
+markdown:    kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+incremental: false
+
+kramdown:
+  input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
+  hard_wrap: false
+
 gems:
  - jekyll-coffeescript
  - jekyll-paginate
