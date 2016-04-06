@@ -6,7 +6,13 @@
 
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$brand-primary: #0085A1;
+$gray-dark: lighten(black, 25%);
+$gray: lighten(black, 50%);
+$white-faded: fade(white, 80%);
+$gray-light: #eee;
+
+$base-font-family: 'Lora', 'Times New Roman', serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -14,7 +20,8 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
+//$text-color:       #111;
+$text-color: $gray-dark;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
@@ -28,9 +35,11 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+// code blocks
+//$code-color: #111;
+$code-color: $brand-primary;
 
-$code-color: #111;
-
+$code-bg: #f5f5f5;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -49,10 +58,10 @@ $code-color: #111;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-    "base",    
-    "bootstrap",
+    "base",
+    "bootstrap", 
+    "clean-blog",
     "font-awesome",
     "animate",
-    "syntax-highlighting",
-    "custom"
+    "syntax-highlighting"
 ;
